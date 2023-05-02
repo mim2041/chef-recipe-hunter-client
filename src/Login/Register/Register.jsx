@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import account from "../../assets/images/account.png";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 
@@ -10,18 +10,22 @@ const auth = getAuth(app)
 
 const Register = () => {
 
-    const {user, createUser} = useContext(AuthContext);
+    const {user, createUser,updateUserProfile} = useContext(AuthContext);
 
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
-    
+    const navigate = useNavigate();
+    const location = useLocation();
+  
+    const from = location.state?.from?.pathname || '/';
     const handleRegister = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
+        const photoURL = form.photoURL.value;
         const password = form.password.value;
         const name = form.name.value;
-        console.log(email, password, name);
+        console.log(photoURL, password, name);
 
 
         // Password strong conditions
@@ -29,11 +33,11 @@ const Register = () => {
         //     setError('Please add at least one uppercase');
         //     return;
         // }
-        // else if(!/(?=.*[0-9].*[0-9])/.test(password)){
+        // else if(!/(?=.[0-9].[0-9])/.test(password)){
         //     setError('please add atleast 2 numbers');
         //     return;
         // }
-        // else if(!/(?=.*[!@#$&*])/.test(password)){
+        // else if(!/(?=.[!@#$&])/.test(password)){
         //     setError('Please add a special character');
         //     return;
         // }
@@ -54,7 +58,9 @@ const Register = () => {
             console.log(loggedUser);
             setError('');
             form.reset();
+            handleUpdateUserProfile(name, photoURL);
             setSuccess("User has been created successfully");
+            navigate('/')
         })
         .catch(error => {
             console.log(error.message);
@@ -62,6 +68,17 @@ const Register = () => {
         })
     }
 
+    const handleUpdateUserProfile = (name,photoURL) => {
+        const profile = {
+          displayName: name,
+          photoURL: photoURL
+        }
+        updateUserProfile(profile)
+          .then(() => {
+            
+          })
+          .catch((error) => console.error(error));
+      };
     return (
         <div className='login mt-10'>
             <img className='w-full' src={account} alt="" />
@@ -70,6 +87,7 @@ const Register = () => {
                 <h1 className='text-4xl text-center mb-8 mt-10'>Create An Account</h1>
                 <input className='border-2 w-full mb-5 py-2 rounded-lg pl-2' type="text" name="name" placeholder='Your Name' id="name" required/>
                 <input className='border-2 w-full mb-5 py-2 rounded-lg pl-2' type="email" name="email" placeholder='Your Email' id="email" />
+                <input className='border-2 w-full mb-5 py-2 rounded-lg pl-2' type="text" name="photoURL" placeholder='Your photoURL' id="photoURL" />
                 
                 <input className='border-2 w-full py-2 rounded-lg pl-2' type="password" name="password" placeholder='Your Password' id="password" />\
                 <br />
@@ -82,9 +100,9 @@ const Register = () => {
                     <p className='text-center'>Already have an account? <Link to="/login" className='text-amber-500 underline'>
                     Login
                 </Link></p>
-                <div className='or'>
+                <div className='or flex justify-center items-center'>
                     <hr className='w-1/4'/>
-                    <p className='text-lg text-white'>Or</p>
+                    <p className='text-lg text-white mx-2'>Or</p>
                     <hr className='w-1/4'/>
                 </div>
                 <div className='loginWith'>
