@@ -5,12 +5,15 @@ import { Link } from 'react-router-dom';
 
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import app from '../../firebase/firebase.config';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 
 
 const auth = getAuth(app);
 
 const Login = () => {
+    const {signIn, popupSignIn} = useContext(AuthContext);
+
     const [success, setSuccess] = useState('');
     const [error, setError] = useState('');
     const [user, setUser] = useState(null);
@@ -24,7 +27,7 @@ const Login = () => {
         const password = form.password.value;
         console.log(email, password);
 
-        signInWithEmailAndPassword(auth, email, password)
+        signIn(email, password)
         .then(result => {
             const loggedUser = result.user;
             console.log(loggedUser);
@@ -38,7 +41,7 @@ const Login = () => {
     }
 
     const handleGoogleSignIn = () => {
-        signInWithPopup(auth, googleProvider)
+        popupSignIn( googleProvider)
         .then(result => {
             const loggedUser = result.user;
             console.log(loggedUser);
@@ -50,7 +53,7 @@ const Login = () => {
     }
 
     const handleGithubSignIn = () => {
-        signInWithPopup(auth, githubProvider)
+        popupSignIn( githubProvider)
         .then(result => {
             const loggedUser = result.user;
             console.log(loggedUser);

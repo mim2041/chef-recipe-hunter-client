@@ -4,10 +4,13 @@ import account from "../../assets/images/account.png";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 
 import app from '../../firebase/firebase.config';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const auth = getAuth(app)
 
 const Register = () => {
+
+    const {user, createUser} = useContext(AuthContext);
 
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
@@ -20,25 +23,32 @@ const Register = () => {
         const name = form.name.value;
         console.log(email, password, name);
 
+
         // Password strong conditions
-        if(!/(?=.*[A-Z])/.test(password)){
-            setError('Please add at least one uppercase');
-            return;
-        }
-        else if(!/(?=.*[0-9].*[0-9])/.test(password)){
-            setError('please add atleast 2 numbers');
-            return;
-        }
-        else if(!/(?=.*[!@#$&*])/.test(password)){
-            setError('Please add a special character');
-            return;
-        }
-        else if(password.length < 6){
-            setError('please add at least 6 characters in your password')
+        // if(!/(?=.*[A-Z])/.test(password)){
+        //     setError('Please add at least one uppercase');
+        //     return;
+        // }
+        // else if(!/(?=.*[0-9].*[0-9])/.test(password)){
+        //     setError('please add atleast 2 numbers');
+        //     return;
+        // }
+        // else if(!/(?=.*[!@#$&*])/.test(password)){
+        //     setError('Please add a special character');
+        //     return;
+        // }
+        if(email === '' || password === ''){
+            setError('Cannot submit empty email and password fields')
             return;
         }
 
-        createUserWithEmailAndPassword(auth, email, password)
+        else if(password.length < 6){
+            setError('The password is less than 6 characters')
+            return;
+        }
+
+        
+        createUser(email, password)
         .then(result => {
             const loggedUser = result.user;
             console.log(loggedUser);
@@ -59,9 +69,9 @@ const Register = () => {
                 
                 <h1 className='text-4xl text-center mb-8 mt-10'>Create An Account</h1>
                 <input className='border-2 w-full mb-5 py-2 rounded-lg pl-2' type="text" name="name" placeholder='Your Name' id="name" required/>
-                <input className='border-2 w-full mb-5 py-2 rounded-lg pl-2' type="email" name="email" placeholder='Your Email' id="email" required/>
+                <input className='border-2 w-full mb-5 py-2 rounded-lg pl-2' type="email" name="email" placeholder='Your Email' id="email" />
                 
-                <input className='border-2 w-full py-2 rounded-lg pl-2' type="password" name="password" placeholder='Your Password' id="password" required/>\
+                <input className='border-2 w-full py-2 rounded-lg pl-2' type="password" name="password" placeholder='Your Password' id="password" />\
                 <br />
 
                 <div className='checkbox'>
