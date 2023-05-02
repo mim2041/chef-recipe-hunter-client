@@ -7,11 +7,13 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Home from './Home/Home/Home.jsx';
 import Login from './Login/Login/Login.jsx';
 import Main from './layout/Main.jsx';
 import AuthProvider from './context/AuthProvider/AuthProvider.jsx';
 import Register from './Login/Register/Register.jsx';
+import Home from './pages/Home/Home/Home.jsx';
+import PrivateRoutes from './routes/PrivateRoutes.jsx';
+import FoodItem from './pages/FoodItem/FoodItem.jsx';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: "/foodItem",
+        element: <PrivateRoutes><FoodItem></FoodItem></PrivateRoutes>
       }
     ]
   },

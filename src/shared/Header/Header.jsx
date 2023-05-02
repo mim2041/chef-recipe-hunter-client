@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import './Header.css';
+
 const Header = () => {
     const {user, logOut} = useContext(AuthContext);
     
@@ -20,11 +22,11 @@ const Header = () => {
                 </label>
                 <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                 <Link to="/"><button className=' m-2'>Home</button></Link>
-                <Link to="/login"><button className=' m-2'>Blog</button></Link>
-                <Link to="/login"><button className=' m-2'>Food Item</button></Link>
+                <Link to="/blog"><button className=' m-2'>Blog</button></Link>
+                <Link to="/foodItem"><button className=' m-2'>Food Item</button></Link>
                 </ul>
                 </div>
-                <Link className="btn btn-ghost normal-case text-xl">Bengali Cusine</Link>
+                <Link className="btn btn-ghost normal-case text-xl">Bengali Cuisine</Link>
             </div>
             
             <div className="navbar-center hidden lg:flex">
@@ -38,8 +40,8 @@ const Header = () => {
             <div className="navbar-end">
             
             {
-                user ? <><img className='userImg' src={user.photoURL} alt="" />
-                <button onClick={handleLogOut}>Log Out</button></> : <Link to="/login"><button className='btn btn-primary'>Login</button></Link>
+                user ? <><img title={user.displayName} className='userImg' src={user.photoURL} alt="" />
+                <button  className='btn btn-primary' onClick={handleLogOut}>LogOut</button></> : <Link to="/login"><button className='btn btn-primary'>Login</button></Link>
             }
             </div>
             </div>

@@ -1,9 +1,10 @@
 import React from 'react';
+import Recipes from '../../Recipes/Recipes';
 
 const Home = () => {
     return (
         <div>
-            <h2>This is home</h2>
+            <Recipes></Recipes>
         </div>
     );
 };
