@@ -23,7 +23,11 @@ const Blog = () => {
                     <li>Declare the propTypes object at the bottom of the component class:</li>
                     <img src={image2} alt="" />
                     In this example, we have declared three props, prop1, prop2, and prop3. prop1 is a required string, prop2 is an optional number, and prop3 is an object with two properties: nestedProp1, which is an optional string, and nestedProp2, which is a required number.
+                    <li>Use your component and pass in the props:</li>
+                    <img src={image3} alt="" />
+                    In this example, we are passing in the required string prop1, the optional number prop2, and the object prop3 with both nestedProp1 and nestedProp2 defined.
                 </ol>
+                <p>When a prop fails validation, PropTypes will throw a warning in the console with a description of the expected prop type and a message about which prop failed validation. This helps catch errors early on and makes debugging easier.</p>
             </div>
         </div>
     );

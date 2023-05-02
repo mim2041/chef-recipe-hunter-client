@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import login from '../../assets/images/login.jpg';
 import './Login.css'
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import app from '../../firebase/firebase.config';
@@ -19,7 +19,10 @@ const Login = () => {
     const [user, setUser] = useState(null);
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
-    
+    const navigate = useNavigate();
+    const location = useLocation();
+  
+    const from = location.state?.from?.pathname || '/';
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
@@ -33,6 +36,7 @@ const Login = () => {
             console.log(loggedUser);
             setSuccess('User login successful');
             setError('');
+            navigate(from, { replace: true });
         })
         .catch(error => {
             setError(error.message)

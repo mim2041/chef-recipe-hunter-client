@@ -14,6 +14,7 @@ import Register from './Login/Register/Register.jsx';
 import Home from './pages/Home/Home/Home.jsx';
 import PrivateRoutes from './routes/PrivateRoutes.jsx';
 import FoodItem from './pages/FoodItem/FoodItem.jsx';
+import Blog from './pages/Blog/Blog.jsx';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,14 @@ const router = createBrowserRouter([
       },
       {
         path: "/foodItem",
+        element: <PrivateRoutes><FoodItem></FoodItem></PrivateRoutes>
+      },
+      {
+        path: "/blog",
+        element: <PrivateRoutes><Blog></Blog></PrivateRoutes>
+      },
+      {
+        path: "/faq",
         element: <PrivateRoutes><FoodItem></FoodItem></PrivateRoutes>
       }
     ]
