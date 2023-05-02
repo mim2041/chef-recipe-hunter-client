@@ -1,0 +1,24 @@
+.login{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.checkbox{
+    display: flex;
+    gap: 5px;
+    width: 200px;
+    border: none;
+}
+.check-pass{
+    display: flex;
+    justify-content: space-between;
+}
+.or{
+    display: flex;
+    align-items: center;
+}
+.loginWith{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
