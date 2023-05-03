@@ -6,7 +6,7 @@ import './Blog.css'
 
 const Blog = () => {
     return (
-        <div className='text-justify blog'>
+        <div className='text-justify blog px-14 py-8 mt-8 bg-green-200'>
             <div className='my-10'>
                 <h1 className='text-3xl text-indigo-700 mb-5'>1. What are the differences between uncontrolled and controlled components?</h1>
                 <p>In React, a component can be classified as either controlled or uncontrolled depending on how it handles its state.</p>

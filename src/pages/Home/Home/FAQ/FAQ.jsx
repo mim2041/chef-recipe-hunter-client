@@ -1,11 +1,12 @@
 import { Accordion } from 'flowbite-react';
 import React from 'react';
+import './FAQ.css'
 
 const FAQ = () => {
     return (
-        <div className='my-12 text-left'>
+        <div className='mt-8 p-14 text-left bg-sky-200'>
             <h2 className='my-5 text-4xl font-bold text-violet-700 text-center'>People frequently asks these questions</h2>
-            <p className='text-lg w-2/3 mb-5 text-center mx-auto'>People who visit our website frequently asks some repeated questions. To provide you with the questions on your mind and answer them we have shown it to you.</p>
+            <p className='text-lg lg:w-2/3 mb-5 text-center mx-auto'>People who visit our website frequently asks some repeated questions. To provide you with the questions on your mind and answer them we have shown it to you.</p>
            <Accordion collapseAll={true}>
             <Accordion.Panel>
                 <Accordion.Title className='text-2xl text-violet-700'>

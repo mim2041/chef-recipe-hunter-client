@@ -4,18 +4,15 @@ import RecipeDetails from '../RecipeDetails/RecipeDetails';
 
 const Details = () => {
     const {id} = useParams();
-    const recipes = useLoaderData();
-    console.log(recipes)
+    const recipe = useLoaderData();
+    console.log(recipe);
+    
 
     return (
         <div>
-            <h2>Details are here: {recipes.id}</h2>
-            {
-                recipes.map(recipe => <RecipeDetails
-                key={recipe.id}
-                recipe={recipe}
-                ></RecipeDetails>)
-            }
+            <img src={recipe.food_picture} alt="" />
+            <h2>Details are here: {recipe.id}</h2>
+            <p>{recipe.food_name}</p>
         </div>
     );
 };
