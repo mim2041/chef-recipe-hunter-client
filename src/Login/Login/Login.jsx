@@ -14,6 +14,7 @@ const auth = getAuth(app);
 const Login = () => {
     const { signIn, popupSignIn} = useContext(AuthContext);
 
+    const [show, setShow] = useState(false);
     const [success, setSuccess] = useState('');
     const [error, setError] = useState('');
     const [user, setUser] = useState(null);
@@ -98,6 +99,12 @@ const Login = () => {
                 <div className="form-control">
                 <label className="label">
                     <span className="label-text">Password</span>
+                    <p onClick={() => setShow(!show)}><small>
+                        {
+                            show ? <span>Hide Password</span> : 
+                            <span>Show Password</span>
+                        }
+                        </small></p>
                 </label>
                 <input type="password" name='password' placeholder="password" className="input input-bordered" required/>
                 <div className='check-pass justify-between text-white mb-5'>
