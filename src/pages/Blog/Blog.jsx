@@ -30,6 +30,21 @@ const Blog = () => {
                 </ol>
                 <p>When a prop fails validation, PropTypes will throw a warning in the console with a description of the expected prop type and a message about which prop failed validation. This helps catch errors early on and makes debugging easier.</p>
             </div>
+
+            <div className='my-10'>
+                <h1 className='text-3xl text-indigo-700 mb-5'>3. What are the difference between nodejs and express js.</h1>
+                <p>Node.js is a JavaScript runtime environment that allows developers to run JavaScript on the server-side. It is built on the V8 JavaScript engine used in the Chrome browser. Node.js provides several built-in modules that developers can use to build server-side applications, including file system access, networking, and cryptography.</p>
+                <p>Express.js, on the other hand, is a web application framework for Node.js. It provides a set of features and tools that make it easier for developers to build web applications using Node.js. Express.js allows developers to define routes, middleware, and handlers for incoming requests, as well as provide a range of functionality for handling HTTP requests and responses, such as URL routing, template rendering, and error handling.</p>
+                <p>In summary, Node.js provides the runtime environment to run JavaScript on the server-side, while Express.js is a web application framework built on top of Node.js that provides a set of features and tools to make it easier for developers to build web applications using Node.js.</p>
+            </div>
+
+            <div>
+                <h1 className='text-3xl text-indigo-700 mb-5'>4. What is a custom hook, and why will you create a custom hook?</h1>
+                <p>A custom hook in React is a function that allows you to extract and reuse component logic in a reusable way. Custom hooks are a way to abstract common functionality into a separate module that can be used across multiple components in a React application. By using custom hooks, you can simplify the code in your components and make it more reusable, maintainable, and testable.</p>
+                <p>Custom hooks are created to extract and reuse logic that is common to multiple components. For example, if you find yourself repeating the same code in multiple components, you can create a custom hook to extract that logic into a reusable function. This can be especially useful when dealing with complex logic or when working with third-party libraries that require certain patterns or configurations.</p>
+                <p>Custom hooks can also be used to abstract away implementation details and provide a simpler, higher-level interface to a particular feature or functionality. For example, you could create a custom hook that handles all the details of working with a particular API or backend service, allowing your components to simply use the hook to access the service without having to worry about the implementation details.</p>
+                <p>In summary, custom hooks are a powerful tool in React that allow you to extract and reuse common component logic in a reusable way. They can simplify your code, make it more maintainable, and abstract away implementation details to provide a simpler, higher-level interface to a particular feature or functionality.</p>
+            </div>
         </div>
     );
 };

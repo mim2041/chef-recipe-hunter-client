@@ -12,7 +12,7 @@ import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 const auth = getAuth(app);
 
 const Login = () => {
-    const {signIn, popupSignIn} = useContext(AuthContext);
+    const { signIn, popupSignIn} = useContext(AuthContext);
 
     const [success, setSuccess] = useState('');
     const [error, setError] = useState('');
@@ -21,7 +21,7 @@ const Login = () => {
     const githubProvider = new GithubAuthProvider();
     const navigate = useNavigate();
     const location = useLocation();
-  
+
     const from = location.state?.from?.pathname || '/';
     const handleLogin = event => {
         event.preventDefault();
@@ -29,6 +29,14 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
+
+        console.log(user)
+        if(user.email !== email){
+            setError('Email does not match.')
+        }
+        else if(user.password !== password){
+            setError('Password does not match');
+        }
 
         signIn(email, password)
         .then(result => {
@@ -50,6 +58,7 @@ const Login = () => {
             const loggedUser = result.user;
             console.log(loggedUser);
             setUser(loggedUser);
+            navigate(from, { replace: true });
         })
         .catch(error => {
             console.log(error);
@@ -62,6 +71,7 @@ const Login = () => {
             const loggedUser = result.user;
             console.log(loggedUser);
             setUser(loggedUser);
+            navigate(from, { replace: true });
         })
         .catch(error => {
             console.log(error);

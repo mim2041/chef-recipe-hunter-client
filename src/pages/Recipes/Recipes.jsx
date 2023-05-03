@@ -6,7 +6,7 @@ const Recipes = () => {
     const [recipes, setRecipes] = useState([]);
 
     useEffect( () => {
-        fetch('http://localhost:5000/allRecipes')
+        fetch('http://localhost:5000/recipes')
         .then(res => res.json())
         .then(data => setRecipes(data))
         .catch(error => console.error(error))

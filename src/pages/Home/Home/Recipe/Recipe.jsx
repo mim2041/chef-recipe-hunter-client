@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FoodDetails from '../../../Details/Details';
 // import { FaBeer, BsFillSuitHeartFill } from 'react-icons/fa';
 
 const Recipe = ({recipe}) => {
@@ -54,7 +55,7 @@ const Recipe = ({recipe}) => {
             </div>
             
             <div className="card-actions justify-end">
-            <button className="btn btn-primary">View Details</button>
+            <Link to={`/recipes/${recipe.id}`}><button className="btn btn-primary">View Details</button></Link>
             </div>
         </div>
     </div>

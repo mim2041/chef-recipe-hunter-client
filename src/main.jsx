@@ -15,6 +15,8 @@ import Home from './pages/Home/Home/Home.jsx';
 import PrivateRoutes from './routes/PrivateRoutes.jsx';
 import FoodItem from './pages/FoodItem/FoodItem.jsx';
 import Blog from './pages/Blog/Blog.jsx';
+import Details from './pages/Details/Details.jsx';
+import FoodsContainer from './pages/FoodsContainer/FoodsContainer.jsx';
 
 const router = createBrowserRouter([
   {
@@ -35,7 +37,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/foodItem",
-        element: <PrivateRoutes><FoodItem></FoodItem></PrivateRoutes>
+        element: <PrivateRoutes><FoodItem></FoodItem></PrivateRoutes>,
+        children: [
+          {
+            path: '/foodItem/:category',
+            element: <FoodsContainer></FoodsContainer>
+          }
+        ]
       },
       {
         path: "/blog",
@@ -44,6 +52,11 @@ const router = createBrowserRouter([
       {
         path: "/faq",
         element: <PrivateRoutes><FoodItem></FoodItem></PrivateRoutes>
+      },
+      {
+        path: '/recipes/:id',
+        element: <Details></Details>,
+        loader: ({params}) => fetch(`http://localhost:5000/recipes/${params.id}`)
       }
     ]
   },
