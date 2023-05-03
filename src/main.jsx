@@ -17,6 +17,7 @@ import FoodItem from './pages/FoodItem/FoodItem.jsx';
 import Blog from './pages/Blog/Blog.jsx';
 import Details from './pages/Details/Details.jsx';
 import FoodsContainer from './pages/FoodsContainer/FoodsContainer.jsx';
+import NotFound from './Others/NotFound/NotFound.jsx';
 
 const router = createBrowserRouter([
   {
@@ -40,8 +41,14 @@ const router = createBrowserRouter([
         element: <PrivateRoutes><FoodItem></FoodItem></PrivateRoutes>,
         children: [
           {
+            path: '/foodItem',
+            element: <FoodsContainer></FoodsContainer>,
+            loader: ({params}) => fetch(`http://localhost:5000/categories/Fruits`)
+          },
+          {
             path: '/foodItem/:category',
-            element: <FoodsContainer></FoodsContainer>
+            element: <FoodsContainer></FoodsContainer>,
+            loader: ({params}) => fetch(`http://localhost:5000/categories/${params.category}`)
           }
         ]
       },
@@ -60,6 +67,10 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path: '*',
+    element: <NotFound></NotFound>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

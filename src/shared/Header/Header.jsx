@@ -41,8 +41,9 @@ const Header = () => {
             <div className="navbar-end">
             
             {
-                user ? <><img title={user.displayName} className='userImg' src={user.photoURL} alt="" />
-                <button  className='btn btn-primary' onClick={handleLogOut}>LogOut</button></> : <ActiveLink to="/login"><button className='btn btn-primary'>Login</button></ActiveLink>
+                user ? <><img title={user.displayName ? user.displayName : null} className='userImg' src={user.photoURL} alt="" />
+                <button  className='btn btn-primary' onClick={handleLogOut}>LogOut</button></> 
+                : <ActiveLink to="/login"><button className='btn btn-primary'>Login</button></ActiveLink>
             }
             </div>
             </div>
