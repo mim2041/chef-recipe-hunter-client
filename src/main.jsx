@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import './index.css';
 
 import {
@@ -62,7 +61,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/recipes/:id',
-        element: <Details></Details>,
+        element: <PrivateRoutes><Details></Details></PrivateRoutes>,
         loader: ({params}) => fetch(`http://localhost:5000/recipes/${params.id}`)
       }
     ]
