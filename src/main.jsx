@@ -17,6 +17,7 @@ import Blog from './pages/Blog/Blog.jsx';
 import Details from './pages/Details/Details.jsx';
 import FoodsContainer from './pages/FoodsContainer/FoodsContainer.jsx';
 import NotFound from './Others/NotFound/NotFound.jsx';
+import { Toaster } from 'react-hot-toast';
 
 const router = createBrowserRouter([
   {
@@ -76,6 +77,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
       <RouterProvider router={router} />
+      <Toaster />
     </AuthProvider>
   </React.StrictMode>,
 )

@@ -31,14 +31,6 @@ const Login = () => {
         const password = form.password.value;
         console.log(email, password);
 
-        // console.log(user)
-        // if(user.email !== email){
-        //     setError('Email does not match.')
-        // }
-        // else if(user.password !== password){
-        //     setError('Password does not match');
-        // }
-
         signIn(email, password)
         .then(result => {
             const loggedUser = result.user;
@@ -137,6 +129,7 @@ const Login = () => {
                 </div>
                 
                 <p className='text-success'>{success}</p>
+                <p className='text-[red]'>{error}</p>
             </form>
             <div className='loginWith'>
                     <button  onClick={handleGoogleSignIn} className='bg-blue-500 px-10 py-8 rounded-lg text-white text-lg'> Continue with Google</button>

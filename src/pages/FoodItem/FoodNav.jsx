@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./FoodItem.css";
+import ActiveLink from "../../routes/ActiveLink/ActiveLink";
 
 const FoodNav = () => {
   const [categories, setCategories] = useState([]);
