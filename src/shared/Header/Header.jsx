@@ -27,8 +27,7 @@ const Header = () => {
                 <ActiveLink to="/foodItem"><button className=' m-2'>Food Item</button></ActiveLink>
                 </ul>
                 </div>
-                <Link className="btn btn-ghost normal-case text-xl">Bengali Cuisine</Link>
-            </div>
+                <Link className="btn btn-ghost normal-case text-sm lg:text-xl">Bengali Cuisine</Link>            </div>
             
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
