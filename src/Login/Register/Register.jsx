@@ -25,22 +25,10 @@ const Register = () => {
         const photoURL = form.photoURL.value;
         const password = form.password.value;
         const name = form.name.value;
-        console.log(photoURL, password, name);
+        // console.log(photoURL, password, name);
 
 
-        // Password strong conditions
-        // if(!/(?=.*[A-Z])/.test(password)){
-        //     setError('Please add at least one uppercase');
-        //     return;
-        // }
-        // else if(!/(?=.[0-9].[0-9])/.test(password)){
-        //     setError('please add atleast 2 numbers');
-        //     return;
-        // }
-        // else if(!/(?=.[!@#$&])/.test(password)){
-        //     setError('Please add a special character');
-        //     return;
-        // }
+        
         if(email === '' || password === ''){
             setError('Cannot submit empty email and password fields')
             return;
@@ -82,7 +70,8 @@ const Register = () => {
     return (
         <div className='login mt-10'>
             <img className='w-full' src={account} alt="" />
-            <form onSubmit={handleRegister} className='border-2 px-10 py-5 bg-slate-400 w-full'>
+           <div className='pb-10 bg-violet-200'>
+           <form onSubmit={handleRegister} className=' px-10 py-5 w-full'>
                 
                 <h1 className='text-4xl text-center mb-8 mt-10'>Create An Account</h1>
                 <input className='border-2 w-full mb-5 py-2 rounded-lg pl-2' type="text" name="name" placeholder='Your Name' id="name" required/>
@@ -105,13 +94,15 @@ const Register = () => {
                     <p className='text-lg text-white mx-2'>Or</p>
                     <hr className='w-1/4'/>
                 </div>
-                <div className='loginWith'>
-                    <button className='bg-blue-500 px-10 py-8 rounded-lg text-white text-lg'> Continue with Google</button>
-                    <button className='bg-green-500 px-10 py-8 rounded-lg text-white text-lg'> Continue with Github</button>
-                </div>
+                
             <p className='text-danger'>{error}</p>
             <p>{success}</p>
             </form>
+            <div className='loginWith'>
+                    <button className='bg-blue-500 px-10 py-8 rounded-lg text-white text-lg'> Continue with Google</button>
+                    <button className='bg-green-500 px-10 py-8 rounded-lg text-white text-lg'> Continue with Github</button>
+                </div>
+           </div>
         </div>
     );
 };

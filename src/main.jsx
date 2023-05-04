@@ -43,12 +43,12 @@ const router = createBrowserRouter([
           {
             path: '/foodItem',
             element: <FoodsContainer></FoodsContainer>,
-            loader: ({params}) => fetch(`http://localhost:5000/categories/Fruits`)
+            loader: ({params}) => fetch(`https://chef-recipe-hunter-server-mim2041.vercel.app/categories/Fruits`)
           },
           {
             path: '/foodItem/:category',
             element: <FoodsContainer></FoodsContainer>,
-            loader: ({params}) => fetch(`http://localhost:5000/categories/${params.category}`)
+            loader: ({params}) => fetch(`https://chef-recipe-hunter-server-mim2041.vercel.app/categories/${params.category}`)
           }
         ]
       },
@@ -63,7 +63,7 @@ const router = createBrowserRouter([
       {
         path: '/recipes/:id',
         element: <PrivateRoutes><Details></Details></PrivateRoutes>,
-        loader: ({params}) => fetch(`http://localhost:5000/recipes/${params.id}`)
+        loader: ({params}) => fetch(`https://chef-recipe-hunter-server-mim2041.vercel.app/recipes/${params.id}`)
       }
     ]
   },

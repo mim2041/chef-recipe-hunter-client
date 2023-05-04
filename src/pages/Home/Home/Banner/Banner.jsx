@@ -15,29 +15,29 @@ const Banner = () => {
     <div className="flex h-full items-center justify-center bg-gray-400 dark:bg-gray-700 dark:text-white">
       <img src={banner1} alt="" />
       <div class="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent p-4 pl-12">
-              <h2 class="text-2xl font-bold text-white mb-2">Wan't to know about Bengali cuisine and the well known chef's?</h2>
-              <p class="text-white w-2/3">If you want to know about Bengali cuisine and the well known chef's, then you have come at the right website. We provide all types of foods here and the chef's bio. You can see the Bengalis traditional foods also. We guide where the traditional foods are found.</p>
+              <h2 class="text-2xl font-bold text-white mb-2 sm:text-sm">Wan't to know about Bengali cuisine and the well known chef's?</h2>
+              <p class="text-white lg:w-2/3 lg:block">If you want to know about Bengali cuisine and the well known chef's, then you have come at the right website. We provide all types of foods here and the chef's bio. You can see the Bengalis traditional foods also. We guide where the traditional foods are found.</p>
             </div>
     </div>
     <div className="flex h-full items-center justify-center bg-gray-400 dark:bg-gray-700 dark:text-white">
       <img src={banner2} alt="" />
       <div class="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent p-4 pl-12">
               <h2 class="text-2xl font-bold text-white mb-2">Wan't to know about Bengali cuisine and the well known chef's?</h2>
-              <p class="text-white w-2/3">If you want to know about Bengali cuisine and the well known chef's, then you have come at the right website. We provide all types of foods here and the chef's bio. You can see the Bengalis traditional foods also. We guide where the traditional foods are found.</p>
+              <p class="text-white lg:w-2/3">If you want to know about Bengali cuisine and the well known chef's, then you have come at the right website. We provide all types of foods here and the chef's bio. You can see the Bengalis traditional foods also. We guide where the traditional foods are found.</p>
             </div>
     </div>
     <div className="flex h-full items-center justify-center bg-gray-400 dark:bg-gray-700 dark:text-white">
       <img src={banner4} alt="" />
       <div class="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent p-4 pl-12">
               <h2 class="text-2xl font-bold text-white mb-2">Wan't to know about Bengali cuisine and the well known chef's?</h2>
-              <p class="text-white w-2/3">If you want to know about Bengali cuisine and the well known chef's, then you have come at the right website. We provide all types of foods here and the chef's bio. You can see the Bengalis traditional foods also. We guide where the traditional foods are found.</p>
+              <p class="text-white lg:w-2/3">If you want to know about Bengali cuisine and the well known chef's, then you have come at the right website. We provide all types of foods here and the chef's bio. You can see the Bengalis traditional foods also. We guide where the traditional foods are found.</p>
             </div>
     </div>
     <div className="flex h-full items-center justify-center bg-gray-400 dark:bg-gray-700 dark:text-white">
       <img src={banner6} alt="" />
       <div class="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent p-4 pl-12">
               <h2 class="text-2xl font-bold text-white mb-2">Wan't to know about Bengali cuisine and the well known chef's?</h2>
-              <p class="text-white w-2/3">If you want to know about Bengali cuisine and the well known chef's, then you have come at the right website. We provide all types of foods here and the chef's bio. You can see the Bengalis traditional foods also. We guide where the traditional foods are found.</p>
+              <p class="text-white lg:w-2/3">If you want to know about Bengali cuisine and the well known chef's, then you have come at the right website. We provide all types of foods here and the chef's bio. You can see the Bengalis traditional foods also. We guide where the traditional foods are found.</p>
             </div>
     </div>
     
