@@ -9,9 +9,9 @@ import { FaFileDownload } from "react-icons/fa";
 const Blog = () => {
   const ref = createRef();
   return (
-    <div className="text-justify blog px-14 py-8 mt-8 bg-green-200">
+    <div className="text-justify blog lg:px-14 px-5 py-8 mt-8 bg-green-200">
       <div className="my-10">
-        <div className="flex justify-between">
+        <div className="flex justify-between ">
           <h1 className="text-3xl text-indigo-700 mb-5">
             1. What are the differences between uncontrolled and controlled
             components?

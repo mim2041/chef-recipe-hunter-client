@@ -2,7 +2,7 @@ import React from 'react';
 
 const ChefInfo = ({chef}) => {
     return (
-        <div className=' grid grid-cols-1 lg:grid-cols-2 '>
+        <div className=' grid grid-cols-1 lg:grid-cols-2 my-8 bg-indigo-200'>
             <div className=" m-5 rounded">
                 <img src={chef.chef_picture} className='rounded ' alt="" />
             </div>

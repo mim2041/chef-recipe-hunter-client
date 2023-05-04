@@ -13,7 +13,7 @@ const FoodNav = () => {
       .catch((error) => console.error(error));
   });
   return (
-    <div className="header">
+    <div className="header my-8">
       <div className="navbar bg-slate-900 text-white  lg:p-3">
         <div className="navbar-end">
           <div className="dropdown">

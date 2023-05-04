@@ -7,3 +7,9 @@
 .blog img{
     margin: 10px auto;
 }
+
+@media screen and (max-width: 576px) {
+    blog{
+        margin: -10px;
+    }
+}

@@ -9,9 +9,10 @@ const RecipeInfo = ({ recipe, chef }) => {
         setFavourite(true)
         toast.success("Food added to favourite list")
     }
+    
   return (
     <div>
-      <div className="p-10 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-4">
+      <div className="lg:p-10 bg-sky-200 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 lg:m-4">
         <div className=" flex justify-center ">
           <img src={recipe?.recipe_img} alt="" className=" h-72 w-96" />
         </div>
@@ -80,7 +81,7 @@ const RecipeInfo = ({ recipe, chef }) => {
           </div>
           <div className="">
           <div className="">
-            <p className="text-xl text-[orange]">Ingredients </p>
+            <p className="text-xl text-violet-700">Ingredients </p>
           <ul class="list-disc">
             {
                  recipe.ingredients?.map(item=><li className="text-sm m-3">{item}</li>)   
@@ -89,7 +90,7 @@ const RecipeInfo = ({ recipe, chef }) => {
 </ul>
           </div>
           <div className="">
-            <h1 className="text-xl text-[orange]">Cooking Method </h1>
+            <h1 className="text-xl text-indigo-700">Cooking Method </h1>
           <p>
             {
                 recipe.cooking_method

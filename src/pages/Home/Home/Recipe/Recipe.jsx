@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import FoodDetails from '../../../Details/Details';
 import { ToastContext } from 'flowbite-react/lib/esm/components/Toast/ToastContext';
-// import { FaBeer, BsFillSuitHeartFill } from 'react-icons/fa';
-// import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
-// import "tailwindcss/tailwind.css";
+
 
 const Recipe = ({recipe}) => {
     const [liked, setLiked] = useState(false);
