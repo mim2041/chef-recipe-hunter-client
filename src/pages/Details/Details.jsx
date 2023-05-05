@@ -7,7 +7,6 @@ import RecipeInfo from './RecipeInfo';
 const Details = () => {
     const {id} = useParams();
     const chef = useLoaderData();
-    console.log(chef)
 
     return (
         <div >

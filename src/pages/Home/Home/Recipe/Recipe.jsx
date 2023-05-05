@@ -65,7 +65,7 @@ const Recipe = ({recipe}) => {
             </div>
             
             <div className="card-actions justify-end">
-            <Link to={`/recipes/${recipe.id}`}><button className="btn btn-primary">View Recipes</button></Link>
+            <Link to={`/recipes/${recipe.id}`}><button className="btn btn-primary transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-blue-400 duration-300">View Recipes</button></Link>
             </div>
         </div>
     </div>

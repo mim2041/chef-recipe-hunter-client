@@ -1,12 +1,12 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import login from '../../assets/images/login.jpg';
 import './Login.css'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
-import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import app from '../../firebase/firebase.config';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
-
+import { toast } from "react-hot-toast";
 
 
 const auth = getAuth(app);
@@ -22,6 +22,7 @@ const Login = () => {
     const githubProvider = new GithubAuthProvider();
     const navigate = useNavigate();
     const location = useLocation();
+    const emailRef = useRef();
 
     const from = location.state?.from?.pathname || '/';
     const handleLogin = event => {
@@ -71,6 +72,20 @@ const Login = () => {
         })
     }
 
+    const handleResetPassword = (event) => {
+        const email = emailRef.current.value;
+        if(!email){
+            alert('Please provide your email address to reset password')
+            return;
+        }
+        sendPasswordResetEmail(auth, email)
+        .then(() => {
+            alert('Please check your email')
+        
+        })
+        .catch(error => setError(error.message))
+    }
+
     return (
         <div className=''>
            <h1 className="text-5xl font-bold text-center -mb-5 mt-10">Login now!</h1>
@@ -86,7 +101,7 @@ const Login = () => {
                 <label className="label">
                     <span className="label-text">Email</span>
                 </label>
-                <input type="email" name='email' placeholder="email" className="input input-bordered" required/>
+                <input type="email" name='email' ref={emailRef} placeholder="email" className="input input-bordered" required/>
                 </div>
                 <div className="form-control">
                 <label className="label">
@@ -108,15 +123,12 @@ const Login = () => {
 
                         }
                         </small></p>
-                        <br />
-                        <div className='flex justify-between items-center'>
-                        <div className='checkbox'>
+                </div>
+                        <div className='checkbox mt-2'>
                             <input type="checkbox" className=' text-white'/>
                             <p className=' text-black'>Terms and Conditions</p>
                         </div>
-                        <Link className='text-amber-500 mt-3 underline'>Forgotten Password</Link>
-                        </div>
-                </div>
+                        <p>Forgotten password? please <Link onClick={handleResetPassword} className='text-amber-500 mt-3 underline'>Reset</Link></p>
                 </div>
                 <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>

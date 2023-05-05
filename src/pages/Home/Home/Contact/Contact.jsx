@@ -18,7 +18,7 @@ const Contact = () => {
         </p>
         <div className="flex flex-col-reverse md:flex-row justify-between">
           <div className="rounded-lg grid grid-cols-1 lg:grid-cols-2 bg-zinc-100 w-75 lg:w-3/6">
-            <div className="text-center border-b-2 border-r-2 p-10">
+            <div className="text-center border-b-2 border-r-2 p-10  transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-300 duration-300">
               <img className="mx-auto" src="images/location.png" alt="" />
               <h3 className="text-xl font-bold text-[#ff5900]">Contact Info</h3>
               <div className="text-5xl flex justify-center items-center m-2">
@@ -27,7 +27,7 @@ const Contact = () => {
               <p> +8801521542599</p>
               <p> +8801521542599</p>
             </div>
-            <div className="text-center border-b-2 p-10">
+            <div className="text-center border-b-2 p-10 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-300 duration-300">
               <img className="mx-auto" src="images/call.png" alt="" />
               <h3 className="text-xl font-bold text-[#ff5900]">
                 Facebook
@@ -38,7 +38,7 @@ const Contact = () => {
               <p>Bengali Cuisine</p>
               {/* <p>Jahangirnagar University</p> */}
             </div>
-            <div className="text-center border-r-2 p-10">
+            <div className="text-center border-r-2 p-10 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-300 duration-300">
               <img className="mx-auto" src="images/location.png" alt="" />
               <h3 className="text-xl font-bold text-[#ff5900]">WhatsApp</h3>
               <div className="text-5xl flex justify-center items-center m-2">
@@ -47,7 +47,7 @@ const Contact = () => {
               <p> +8801521542599</p>
               <p> +8801521542599</p>
             </div>
-            <div className="text-center p-10">
+            <div className="text-center p-10  transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-300 duration-300">
               <img className="mx-auto" src="images/location.png" alt="" />
               <h3 className="text-xl font-bold text-[#ff5900]">Email Address</h3>
               <div className="text-5xl flex justify-center items-center m-2">
@@ -89,7 +89,7 @@ const Contact = () => {
                 placeholder="Your Message"
               ></textarea>
 
-              <button className="bg-violet-600 px-auto text-white py-4 w-full rounded-lg">
+              <button className="bg-violet-600 px-auto text-white py-4 w-full rounded-lg  transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-blue-400 duration-300">
                 Send Message
               </button>
             </form>

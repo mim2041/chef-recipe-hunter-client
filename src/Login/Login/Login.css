@@ -8,6 +8,7 @@
     gap: 5px;
     width: 200px;
     border: none;
+    align-items: start;
 }
 .check-pass{
     display: flex;
