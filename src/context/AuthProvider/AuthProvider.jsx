@@ -6,6 +6,7 @@ export const AuthContext = createContext(null);
 
 const auth = getAuth(app);
 
+
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -25,9 +26,7 @@ const AuthProvider = ({children}) => {
         return signOut(auth);
     }
 
-    const popupSignIn = (provider) => {
-        return signInWithPopup(auth, provider);
-    }
+    
 
     // Observe auth state change
     useEffect( () => {
@@ -46,7 +45,6 @@ const AuthProvider = ({children}) => {
         signIn,
         updateUserProfile,
         logOut,
-        popupSignIn,
         loading
     }
 

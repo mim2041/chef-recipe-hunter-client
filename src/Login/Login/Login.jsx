@@ -47,7 +47,7 @@ const Login = () => {
     }
 
     const handleGoogleSignIn = () => {
-        popupSignIn( googleProvider)
+        signInWithPopup(auth, googleProvider)
         .then(result => {
             const loggedUser = result.user;
             console.log(loggedUser);
@@ -60,7 +60,7 @@ const Login = () => {
     }
 
     const handleGithubSignIn = () => {
-        popupSignIn( githubProvider)
+        signInWithPopup(auth, githubProvider)
         .then(result => {
             const loggedUser = result.user;
             console.log(loggedUser);
