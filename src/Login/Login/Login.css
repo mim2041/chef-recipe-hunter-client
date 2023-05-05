@@ -37,3 +37,18 @@
     padding: 5px;
     /* background: rgb(186, 115, 237); */
 }
+
+@media screen and (max-width: 576px) {
+    .login{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+    /* .login-img{
+        display: hidden;
+    } */
+    .loginWith{
+        flex-direction: column;
+        margin: 10px;
+
+    }
+}

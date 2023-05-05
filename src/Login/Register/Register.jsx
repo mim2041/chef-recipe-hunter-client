@@ -68,30 +68,29 @@ const Register = () => {
           .catch((error) => console.error(error));
       };
     return (
-        <div className='login mt-10'>
-            <img className='w-full' src={account} alt="" />
-           <div className='pb-10 bg-violet-200'>
+        <div className='login mt-10 mx-4 lg:mx-12'>
+            <img className='w-full hidden lg:block' src={account} alt="" />
+           <div className='pb-10 card flex-shrink-0 shadow-2xl bg-base-100'>
            <form onSubmit={handleRegister} className=' px-10 py-5 w-full'>
                 
-                <h1 className='text-4xl text-center mb-8 mt-10'>Create An Account</h1>
+                <h1 className='text-4xl text-center  mb-8 mt-10'>Create An Account</h1>
                 <input className='border-2 w-full mb-5 py-2 rounded-lg pl-2' type="text" name="name" placeholder='Your Name' id="name" required/>
                 <input className='border-2 w-full mb-5 py-2 rounded-lg pl-2' type="email" name="email" placeholder='Your Email' id="email" />
                 <input className='border-2 w-full mb-5 py-2 rounded-lg pl-2' type="text" name="photoURL" placeholder='Your photoURL' id="photoURL" />
                 
-                <input className='border-2 w-full py-2 rounded-lg pl-2' type="password" name="password" placeholder='Your Password' id="password" />\
-                <br />
+                <input className='border-2 w-full py-2 rounded-lg pl-2' type="password" name="password" placeholder='Your Password' id="password" />
 
-                <div className='checkbox'>
+                <div className='checkbox mt-2'>
                     <input type="checkbox" className=' text-white'/>
-                    <p className=' text-white'>Terms and Conditions</p>
+                    <p className=' text-black'>Terms and Conditions</p>
                 </div>
-                <button type="submit" className='bg-amber-500 w-full py-2 mb-4 mt-2 text-lg rounded-lg'>Create an Account</button>
+                <button type="submit" className='bg-violet-600 text-white w-full py-2 mb-4 mt-2 text-lg rounded-lg'>Create an Account</button>
                     <p className='text-center'>Already have an account? <Link to="/login" className='text-amber-500 underline'>
                     Login
                 </Link></p>
                 <div className='or flex justify-center items-center'>
                     <hr className='w-1/4'/>
-                    <p className='text-lg text-white mx-2'>Or</p>
+                    <p className='text-lg text-black mx-2'>Or</p>
                     <hr className='w-1/4'/>
                 </div>
                 

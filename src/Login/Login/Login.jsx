@@ -75,8 +75,8 @@ const Login = () => {
         <div className=''>
            <h1 className="text-5xl font-bold text-center -mb-5 mt-10">Login now!</h1>
             <div className="hero min-h-screen">
-            <div className="hero-content grid grid-cols-2">
-            <img className='w-full' src={login} alt="" />
+            <div className="hero-content grid lg:grid-cols-2">
+            <img className='w-full hidden lg:block' src={login} alt="" />
             <div className="">
             
             <div className="card flex-shrink-0  shadow-2xl bg-base-100">
@@ -109,11 +109,13 @@ const Login = () => {
                         }
                         </small></p>
                         <br />
-                    <div className="flex items-center my-4">
-                        <input id="default-checkbox" type="checkbox" value="" className="w-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
-                        <p className=' text-white'>Terms and Conditions</p>
-                    </div>
-                        <Link className='text-amber-500 mt-3 underline'>Forget Password</Link>
+                        <div className='flex justify-between items-center'>
+                        <div className='checkbox'>
+                            <input type="checkbox" className=' text-white'/>
+                            <p className=' text-black'>Terms and Conditions</p>
+                        </div>
+                        <Link className='text-amber-500 mt-3 underline'>Forgotten Password</Link>
+                        </div>
                 </div>
                 </div>
                 <div className="form-control mt-6">
