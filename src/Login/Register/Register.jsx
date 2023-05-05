@@ -97,10 +97,10 @@ const Register = () => {
             <p className='text-danger'>{error}</p>
             <p>{success}</p>
             </form>
-            <div className='loginWith'>
+            {/* <div className='loginWith'>
                     <button className='bg-blue-500 px-10 py-8 rounded-lg text-white text-lg'> Continue with Google</button>
                     <button className='bg-green-500 px-10 py-8 rounded-lg text-white text-lg'> Continue with Github</button>
-                </div>
+                </div> */}
            </div>
         </div>
     );
