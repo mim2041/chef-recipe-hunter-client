@@ -12,7 +12,7 @@ import { toast } from "react-hot-toast";
 const auth = getAuth(app);
 
 const Login = () => {
-    const { signIn, popupSignIn} = useContext(AuthContext);
+    const { signIn } = useContext(AuthContext);
 
     const [show, setShow] = useState(false);
     const [success, setSuccess] = useState('');
